@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #000000;
+    color: #000000;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+header {
+    background-color: #1e2a38;
+    padding: 1rem 0;
+    color: white;
+}
+
+nav h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.current {
+    color: #00bfff;
+}
+
+
+.hero {
+    background: linear-gradient(to right, #00b4db, #0083b0);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.content-section {
+    background-color: rgb(255, 255, 255);
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-text h3 {
+    margin-top: 1.5rem;
+    color: #0077b6;
+    font-size: 1.6rem;
+    border-bottom: 2px solid #00b4db;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.7rem;
+}
+
+.section-text p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.section-text ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-text ul li {
+    margin-bottom: 0.5rem;
+}
+
+.section-text ul li ul {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    list-style-type: square;
+}

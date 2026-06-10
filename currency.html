@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="currency.css" />
+</head>
+<body>
+
+<div class="logo">ADVANCE CALCULATOR</div>
+
+
+<div class="currency">
+  <h2>Currency</h2>
+  <script>
+async function convertCurrency() {
+  const amount = document.getElementById("inputValue").value;
+  const base = document.getElementById("inputunite").value;
+  const target = document.getElementById("outputUnit").value;
+  try {
+    const res = await fetch(`http://127.0.0.1:5000/convert?amount=${amount}&base=${base}&target=${target}`);
+    const data = await res.json();
+    if (data.converted !== undefined) {
+      document.getElementById("outputValue").innerText = `${amount} ${base} = ${data.converted.toFixed(2)} ${target}`;
+    } else {
+      document.getElementById("outputValue").innerText = "Conversion failed.";
+    }
+  } catch (err) {
+    document.getElementById("outputValue").innerText = "Error contacting server.";
+  }
+}
+</script>
+  <input type="number" id="inputValue" placeholder="Enter value"><br>
+
+  <select id="inputunite">
+    <option value="INR">INR</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+    <option value="AUD">AUD</option>
+    <option value="CAD">CAD</option>
+    <option value="JPY">JPY</option>
+    <option value="CNY">CNY</option>
+  </select><br>
+
+  <span>--------to-----------</span><br>
+
+  <select id="outputUnit">
+    <option value="INR">INR</option>
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+    <option value="AUD">AUD</option>
+    <option value="CAD">CAD</option>
+    <option value="JPY">JPY</option>
+    <option value="CNY">CNY</option>
+  </select>
+
+<div id="outputValue"></div>
+<button onclick="canvertunit()">Convert</button>
+
+  <input type="text" id="result" placeholder="Converted value" readonly>
+</div>
+
+<div class="menu">
+  <a href="index.html">HOME</a>
+  <a href="about.html">ABOUT</a>
+  <a href="contact.html">CONTACT</a>
+</div>
+
+</body>
+</html>

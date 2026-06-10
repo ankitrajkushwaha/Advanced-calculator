@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Length Converter</title>
+  <link rel="stylesheet" href="length.css" />
+</head>
+<body>
+
+  <div class="logo">ADVANCE CALCULATOR</div>
+
+  <div class="length">
+    <h2>Length </h2>
+
+    <input type="number" id="inputValue" placeholder="Enter value" />
+
+    <select id="fromUnit">
+      <option value="kilometer">Kilometer</option>
+      <option value="meter">Meter</option>
+      <option value="centimeter">Centimeter</option>
+      <option value="millimeter">Millimeter</option>
+      <option value="mile">Mile</option>
+      <option value="yard">Yard</option>
+      <option value="foot">Foot</option>
+      <option value="inch">Inch</option>
+    </select>
+
+    <select id="toUnit">
+      <option value="kilometer">Kilometer</option>
+      <option value="meter">Meter</option>
+      <option value="centimeter">Centimeter</option>
+      <option value="millimeter">Millimeter</option>
+      <option value="mile">Mile</option>
+      <option value="yard">Yard</option>
+      <option value="foot">Foot</option>
+      <option value="inch">Inch</option>
+    </select>
+
+    <button onclick="convertLength()">Convert</button> 
+
+    
+    <div id="result" class="result">Converted value</div>
+  </div>
+      <div class="menu">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+
+  <script>
+    function convertLength() {
+      const input = parseFloat(document.getElementById("inputValue").value);
+      const fromUnit = document.getElementById("fromUnit").value.toLowerCase();
+      const toUnit = document.getElementById("toUnit").value.toLowerCase();
+      const resultBox = document.getElementById("result");
+
+      if (isNaN(input)) {
+        resultBox.innerHTML = <div style="color: red;">Please enter a valid number.</div>;
+        return;
+      }
+
+      let meterValue;
+
+      switch (fromUnit) {
+        case "kilometer": meterValue = input * 1000; break;
+        case "meter": meterValue = input; break;
+        case "centimeter": meterValue = input / 100; break;
+        case "millimeter": meterValue = input / 1000; break;
+        case "mile": meterValue = input * 1609.34; break;
+        case "yard": meterValue = input * 0.9144; break;
+        case "foot": meterValue = input * 0.3048; break;
+        case "inch": meterValue = input * 0.0254; break;
+        default:
+          resultBox.innerHTML = <div style="color: red;">Invalid source unit</div>;
+          return;
+      }
+
+      let finalValue;
+
+      switch (toUnit) {
+        case "kilometer": finalValue = meterValue / 1000; break;
+        case "meter": finalValue = meterValue; break;
+        case "centimeter": finalValue = meterValue * 100; break;
+        case "millimeter": finalValue = meterValue * 1000; break;
+        case "mile": finalValue = meterValue / 1609.34; break;
+        case "yard": finalValue = meterValue / 0.9144; break;
+        case "foot": finalValue = meterValue / 0.3048; break;
+        case "inch": finalValue = meterValue / 0.0254; break;
+        default:
+          resultBox.innerHTML = <div style="color: red;">Invalid target unit</div>;
+          return;
+      }
+
+      resultBox.innerHTML = `
+           Result: <strong>${finalValue.toFixed(4)} ${toUnit}</strong>
+        </div>
+      `;
+    }
+  </script>
+  <script src="length.js"></script>
+</body>
+</html>

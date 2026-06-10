@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="icon">
+    <div class="logo">ADVANCE Calculator</div>
+</div>
+
+<div class="container">
+    <div class="Calculator">
+        <input type="text" placeholder="0" id="inputBox" readonly>
+        <div>
+            <button class="operator ac">AC</button>
+            <button class="operator del">DEL</button>
+            <button class="operator">%</button>
+            <button class="operator">/</button>
+        </div>
+        <div>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button class="operator">*</button>
+        </div>
+        <div>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button class="operator">-</button>
+        </div>
+        <div>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button class="operator">+</button>
+        </div>
+        <div>
+            <button>00</button>
+            <button>0</button>
+            <button>.</button>
+            <button class="equalBtn">=</button>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <nav>
+            <a href="Heat Calculator.html">TEMPERATURE CALCULATOR</a>
+            <a href="currency.html">CURRENCY CALCULATOR</a>
+            <a href="bmi.html">BMI CALCULATOR</a>
+            <a href="length.html">LENGTH CALCULATOR</a>
+        </nav>
+    </div>
+</div>
+
+<div class="menu">
+    <a href="index.html">HOME</a>
+    <a href="about.html">ABOUT</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="#" onclick="redirectToLogin()">LOGIN</a>
+</div>
+
+<script>
+    function redirectToLogin() {
+        window.location.href = "login.html";
+    }
+</script>
+
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

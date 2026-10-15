@@ -28,8 +28,6 @@ interface for users
   - User Authentication
   - Enhanced UI Design
 ## Authur 
-Ankit Raj
-Fronend Developer
+- Ankit Raj
+- Fronend Developer
 
-- 
-- 

@@ -16,8 +16,8 @@ interface for users
 - HTML
 - CSS
 - JavaScript
-- Node.js
-- MySQL
+- Flask
+- SQL
 
 ## My Contibution
 - Worked As Frontend Developer is a Team of 5 members. Responsible For designing
